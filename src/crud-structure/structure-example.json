@@ -1,0 +1,47 @@
+{
+    "resource": {
+        "name": "products",
+        "operations": [
+            "create",
+            "update",
+            "find_by_pk",
+            "find_by_filters",
+            "delete"
+        ]
+    },
+    "entity": {
+        "name": "product", //gerar nome da collection com o mesmo nome da entidade
+        "config": {
+            "logical_delete": true //se o delete for lógico, incluir um campo "excluded" na collection
+        },
+        "fields": [
+            {
+                "name": "id",
+                "definition": {
+                    "type": "number",
+                    "read_only": true,
+                    "auto_generated": true,
+                    "constraints": [
+                        "mandatory",
+                        "primary_key",
+                        "unique"
+                    ]
+                }
+            },
+            {
+                "name": "name",
+                "definition": {
+                    "type": "string",
+                    "read_only": false,
+                    "auto_generated": false,
+                    "constraints": [
+                        "mandatory",
+                        "unique",
+                        "min_length=8",
+                        "max_length=300"
+                    ]
+                }
+            }
+        ]
+    }
+}
