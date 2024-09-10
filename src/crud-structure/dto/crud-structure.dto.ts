@@ -27,5 +27,5 @@ interface CrudStructureEntityDTO {
 
 export interface CrudStructureDTO {
     resource: CrudStructureResourceDTO
-    entity: CrudStructureEntityDTO[]
+    entity: CrudStructureEntityDTO
 }
